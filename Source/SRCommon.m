@@ -25,21 +25,18 @@
 #define PUDNSLog(X,...)	{ ; }
 #endif
 
-#pragma mark -
-#pragma mark dummy class 
+#pragma mark - dummy class 
 
 @implementation SRDummyClass @end
 
 #pragma mark -
 
-//---------------------------------------------------------- 
-// SRStringForKeyCode()
-//---------------------------------------------------------- 
-NSString * SRStringForKeyCode( NSInteger keyCode )
-{
+NSString * SRStringForKeyCode( NSInteger keyCode ) {
     static SRKeyCodeTransformer *keyCodeTransformer = nil;
-    if ( !keyCodeTransformer )
-        keyCodeTransformer = [[SRKeyCodeTransformer alloc] init];
+	static dispatch_once_t onceToken;
+	dispatch_once(&onceToken, ^{
+		keyCodeTransformer = [[SRKeyCodeTransformer alloc] init];
+	});	
     return [keyCodeTransformer transformedValue:[NSNumber numberWithShort:keyCode]];
 }
 
