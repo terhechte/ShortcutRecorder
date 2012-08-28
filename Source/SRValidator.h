@@ -23,7 +23,7 @@
 
 @interface SRValidator : NSObject
 
-@property (nonatomic, weak) id<SRValidatorDelegate> delegate;
+@property (nonatomic, assign) id<SRValidatorDelegate> delegate;
 
 - (id)initWithDelegate:(id<SRValidatorDelegate>)delegate;
 

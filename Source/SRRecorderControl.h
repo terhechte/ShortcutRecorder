@@ -35,7 +35,7 @@
 
 #pragma mark *** Delegate ***
 
-@property (nonatomic, weak) IBOutlet id<SRRecorderControlDelegate> delegate;
+@property (nonatomic, assign) IBOutlet id<SRRecorderControlDelegate> delegate;
 
 #pragma mark *** Key Combination Control ***
 

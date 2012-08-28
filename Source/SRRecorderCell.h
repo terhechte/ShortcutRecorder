@@ -97,7 +97,7 @@ typedef NSUInteger SRRecorderStyle;
 
 #pragma mark *** Delegate ***
 
-@property (nonatomic, weak) IBOutlet id<SRRecorderCellDelegate> delegate;
+@property (nonatomic, assign) IBOutlet id<SRRecorderCellDelegate> delegate;
 
 #pragma mark *** Responder Control ***
 
