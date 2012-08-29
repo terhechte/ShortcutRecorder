@@ -796,6 +796,13 @@
 		[autosaveName release];
 		autosaveName = [aName copy];
 	}
+    
+    // if the auto save name is != nil, try to load the key combo
+    // this makes it possible to use the control even when it's
+    // added programatically in a non IB environment
+    if (autosaveName != nil) {
+        [self _loadKeyCombo];
+    }
 }
 
 #pragma mark -
